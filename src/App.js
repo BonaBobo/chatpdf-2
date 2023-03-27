@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import Mainseg from './components/mainseg/mainseg';
+import Sidebar from './components/sidebar/sidebar';
+import {TfiAlignLeft} from 'react-icons/tfi';
 function App() {
+  function bindr(){
+    const side=document.querySelector('.sidebar');
+    const container=document.querySelector('.container');
+    side.style.display='block';
+    side.style.width='20vw';
+    container.style.width='80vw';
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TfiAlignLeft className='out' size={40} color='black' onClick={bindr}></TfiAlignLeft>
+      <Sidebar/>
+      <Mainseg/>
     </div>
   );
 }
